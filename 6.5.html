@@ -1,0 +1,28 @@
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Handy Tip Calculator</title>
+    </head>
+
+    <body>
+        <h1>Handy Tip Calculator</h1>
+        <p>
+            Bill: <input type="number" id="bill" />
+            Tip Percentage <input type="number" id="tipPercentage" />
+            <button id="calculate">Calculate</button>
+        </p>
+        <p id="total"></p>
+        <script>
+            (function () {
+                document.getElementById("calculate").onclick = function () {
+                    var bill = +document.getElementById("bill").value;
+                    var tipPercentage = +document.getElementById("tipPercentage").value;
+                    var total = bill + (bill * (tipPercentage/100));
+                    document.getElementById("total").innerHTML = "Your total is $" + total.toFixed(2) + ".";
+                };
+            })();
+        </script>
+    </body>
+</html>
